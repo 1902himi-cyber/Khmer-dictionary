@@ -2,10 +2,10 @@ let dict = [];
 
 fetch("https://script.google.com/macros/s/AKfycbyXPD_rDUW_Lh0UeXAcKvtY2uoEbJl86m3JcKFkHE9Un8SlobNJMz0xqjbATw9-9dFg-w/exec")
   .then(res => res.json())
-  .then(data => {
+.then(data => {
     dict = data;
-    console.log("loaded:", dict);
-  });
+    console.log(dict[0]);
+});
 
 document.getElementById("search").addEventListener("input", searchWord);
 
