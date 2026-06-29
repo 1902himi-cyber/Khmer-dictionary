@@ -1,11 +1,11 @@
-let dict = [];
-
-fetch("https://script.google.com/macros/s/AKfycbyXPD_rDUW_Lh0UeXAcKvtY2uoEbJl86m3JcKFkHE9Un8SlobNJMz0xqjbATw9-9dFg-w/exec")
-  .then(res => res.json())
-  .then(data => {
-    dict = data;
-    console.log("loaded:", dict);
-  });
+let dict = [
+  {
+    km_form: "ឆ្កែ",
+    jp_gloss: "犬",
+    pos: "名詞",
+    km_def: "動物"
+  }
+];
 
 document.getElementById("search").addEventListener("input", searchWord);
 
