@@ -1,4 +1,1 @@
-.then(data => {
-  console.log(data);
-  dict = data;
-});
+console.log("ok");
