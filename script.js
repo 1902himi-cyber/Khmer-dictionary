@@ -24,6 +24,36 @@ function searchWord() {
     return km.includes(input) || jp.includes(input);
   });
 
+results.sort((a, b) => {
+  const aKm = a.km_form || "";
+  const bKm = b.km_form || "";
+  const aJp = a.jp_gloss || "";
+  const bJp = b.jp_gloss || "";
+
+  // 完全一致
+  const aExact =
+    aKm === input || aJp === input;
+  const bExact =
+    bKm === input || bJp === input;
+
+  if (aExact && !bExact) return -1;
+  if (!aExact && bExact) return 1;
+
+  // 前方一致
+  const aStart =
+    aKm.startsWith(input) ||
+    aJp.startsWith(input);
+
+  const bStart =
+    bKm.startsWith(input) ||
+    bJp.startsWith(input);
+
+  if (aStart && !bStart) return -1;
+  if (!aStart && bStart) return 1;
+
+  return 0;
+});
+  
   area.innerHTML = "";
 
   if (results.length === 0) {
