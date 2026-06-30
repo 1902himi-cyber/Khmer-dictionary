@@ -14,8 +14,9 @@ function searchWord() {
   const area = document.getElementById("result");
 
   if (!input) {
-    area.innerHTML = "";
-    return;
+  document.getElementById("count").textContent = "";
+  area.innerHTML = "";
+  return;
   }
 
   const results = dict.filter(x => {
@@ -52,13 +53,16 @@ results.sort((a, b) => {
   if (!aStart && bStart) return 1;
 
   return 0;
-});
+  });
   
   area.innerHTML = "";
 
   if (results.length === 0) {
-    area.innerHTML = "見つかりません";
-    return;
+  document.getElementById("count").textContent = "0件";
+  area.innerHTML = "見つかりません";
+  document.getElementById("count").textContent =
+  `検索結果：${results.length}件`;
+  return;
   }
 
   results.forEach(r => {
