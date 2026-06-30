@@ -57,11 +57,12 @@ results.sort((a, b) => {
   
   area.innerHTML = "";
 
+  document.getElementById("count").textContent =
+  `検索結果：${results.length}件`;
+
   if (results.length === 0) {
   document.getElementById("count").textContent = "0件";
   area.innerHTML = "見つかりません";
-  document.getElementById("count").textContent =
-  `検索結果：${results.length}件`;
   return;
   }
 
