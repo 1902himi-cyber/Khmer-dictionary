@@ -68,9 +68,8 @@ results.sort((a, b) => {
 
   results.forEach(r => {
     const div = document.createElement("div");
-    div.style.border = "1px solid #ccc";
-    div.style.margin = "10px";
-    div.style.padding = "10px";
+    const div = document.createElement("div");
+    div.className = "card";
 
     const examples = (r.example_km || "")
       .split("___")
