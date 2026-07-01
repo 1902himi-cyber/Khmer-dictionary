@@ -1,1 +1,43 @@
+body {
+  font-family: sans-serif;
+  margin: 10px;
+  background: #f5f5f5;
+}
 
+#search {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+#count {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.km {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.jp {
+  font-size: 20px;
+  color: #0066aa;
+}
+
+.example {
+  margin-top: 8px;
+  padding-left: 10px;
+  border-left: 3px solid #cccccc;
+}
