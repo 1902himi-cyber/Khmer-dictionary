@@ -39,6 +39,17 @@ function createWordCard(r) {
   return div;
 }
 
+function renderResults(results) {
+
+  const area = document.getElementById("result");
+
+  area.innerHTML = "";
+
+  results.forEach(r => {
+    area.appendChild(createWordCard(r));
+  });
+}
+
 function searchWord() {
   const input = document.getElementById("search").value.trim();
   const area = document.getElementById("result");
@@ -96,7 +107,5 @@ results.sort((a, b) => {
   return;
   }
 
-results.forEach(r => {
-  area.appendChild(createWordCard(r));
-  });
+  renderResults(results);
 }
