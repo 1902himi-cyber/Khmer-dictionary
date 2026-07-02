@@ -9,6 +9,36 @@ fetch("https://script.google.com/macros/s/AKfycbyXPD_rDUW_Lh0UeXAcKvtY2uoEbJl86m
 
 document.getElementById("search").addEventListener("input", searchWord);
 
+function createWordCard(r) {
+  const div = document.createElement("div");
+  div.className = "card";
+  const examples = (r.example_km || "")
+    .split("___")
+    .map(x => x.trim())
+    .filter(x => x)
+    .map(x => `<div class="example">${x}</div>`)
+    .join("");
+  div.innerHTML = `
+    <div class="km">${r.km_form || ""}</div>
+    <div class="jp">
+      ${r.jp_gloss || ""}
+    </div>
+    <div>
+      ${r.pos || ""}
+    </div>
+    <div>
+      ${r.ipa || ""}
+    </div>
+    <div>
+      ${r.km_def || ""}
+    </div>
+    <div>
+      ${examples}
+    </div>
+  `;
+  return div;
+}
+
 function searchWord() {
   const input = document.getElementById("search").value.trim();
   const area = document.getElementById("result");
@@ -66,25 +96,7 @@ results.sort((a, b) => {
   return;
   }
 
-  results.forEach(r => {
-    const div = document.createElement("div");
-    const div = document.createElement("div");
-    div.className = "card";
-
-    const examples = (r.example_km || "")
-      .split("___")
-      .map(x => `<div>${x}</div>`)
-      .join("");
-
-    div.innerHTML = `
-<div style="font-size:20px;font-weight:bold;">${r.km_form || ""}</div>
-<div>${r.jp_gloss || ""}</div>
-<div>${r.ipa || ""}</div>
-<div>${r.pos || ""}</div>
-<div>${r.km_def || ""}</div>
-<div>${examples}</div>
-    `;
-
-    area.appendChild(div);
+results.forEach(r => {
+  area.appendChild(createWordCard(r));
   });
 }
