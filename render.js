@@ -1,4 +1,15 @@
-function createWordCard(r) {
+function highlight(text, keyword) {
+
+  if (!text || !keyword) return text;
+
+  return text.replaceAll(
+    keyword,
+    `<mark>${keyword}</mark>`
+  );
+
+}
+
+function createWordCard(r, keyword) {
 
   const div = document.createElement("div");
 
@@ -12,9 +23,13 @@ function createWordCard(r) {
     .join("");
 
   div.innerHTML = `
-    <div class="km">${r.km_form}</div>
+    <div class="km">
+      ${highlight(r.km_form || "", keyword)}
+    </div>
 
-    <div class="jp">${r.jp_gloss}</div>
+    <div class="jp">
+      ${highlight(r.jp_gloss || "", keyword)}
+    </div>
 
     <div><b>品詞：</b>${r.pos}</div>
 
