@@ -54,6 +54,6 @@ function searchWord(){
 
     }
 
-    renderResults(results);
+    renderResults(results, input);
 
 }
