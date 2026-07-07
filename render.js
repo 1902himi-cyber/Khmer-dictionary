@@ -52,7 +52,7 @@ function renderResults(results, keyword){
 
     results.forEach(r=>{
 
-        area.appendChild(createWordCard(r));
+        area.appendChild(createWordCard(r, keyword));
 
     });
 
