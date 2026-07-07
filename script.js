@@ -4,6 +4,6 @@ window.onload = async function(){
 
     document
       .getElementById("search")
-      .addEventListener("input", searchWord);
+      .addEventListener("input",searchWord);
 
 };
