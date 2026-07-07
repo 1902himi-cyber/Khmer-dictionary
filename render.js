@@ -44,7 +44,7 @@ function createWordCard(r, keyword) {
 
 }
 
-function renderResults(results){
+function renderResults(results, keyword){
 
     const area=document.getElementById("result");
 
