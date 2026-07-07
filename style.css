@@ -43,8 +43,9 @@ body {
 }
 
 mark {
-  background: yellow;
-  color: black;
-  padding: 1px 3px;
-  border-radius: 3px;
+  background-color: #ffeb3b;  /* 黄色 */
+  color: #000;                /* 文字色は黒 */
+  font-weight: bold;          /* 太字 */
+  padding: 2px 4px;
+  border-radius: 4px;
 }
